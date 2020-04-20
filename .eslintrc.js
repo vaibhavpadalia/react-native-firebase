@@ -1,4 +1,12 @@
-// module.exports = {
-//   root: true,
-//   extends: '@react-native-community',
-// };
+module.exports = {
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+};
