@@ -1,6 +1,8 @@
-import { createStackNavigator } from "react-navigation";
+import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from './Home/Home';
 
-export default Routes = createStackNavigator({
-    Home: { screen: Home }
-})
+const Routes = createStackNavigator({
+  Home: { screen: Home }
+});
+
+export default createAppContainer(Routes);
