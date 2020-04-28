@@ -28,7 +28,6 @@ Add the following plugin to the very bottom of the `/android/app/build.gradle` f
 apply plugin: 'com.google.gms.google-services'
 ```
 
-
-
 ## Push Notifications
 
+Note: Push notifications in foreground are not supported in version 6
