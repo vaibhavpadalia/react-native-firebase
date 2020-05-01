@@ -30,4 +30,9 @@ apply plugin: 'com.google.gms.google-services'
 
 ## Push Notifications
 
-Note: Push notifications in foreground are not supported in version 6
+```Note: Push notifications in foreground are not supported in version 6```
+
+You can use following libraries for push notification:
+* react-native-notifee https://github.com/notifee/react-native-notifee (Paid)
+* react-native-notification https://github.com/wix/react-native-notifications (Free)
+* react-native-push-notification https://github.com/zo0r/react-native-push-notification (Free)
