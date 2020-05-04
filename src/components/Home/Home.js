@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import messaging from '@react-native-firebase/messaging';
+import crashlytics from '@react-native-firebase/crashlytics';
 
 class Home extends Component {
   static navigationOptions = {
@@ -35,18 +36,36 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
-    this.onTokenRefreshListener();
-    this.messageListener();
+    if (this.onTokenRefreshListener && this.messageListener) {
+      this.onTokenRefreshListener();
+      this.messageListener();
+    }
   }
+
+  navigateTo = () => { };
+
+  generateCrash = () => {
+    crashlytics().crash();
+  };
 
   render() {
     return (
       <View>
         <Text>Home component</Text>
-        <Button onPress={() => this.props.navigation.navigate("Main")} title={"Here"} />
+        <TouchableOpacity style={styles.button} onPress={() => this.navigateTo()}>
+          <Text style={{ margin: 10, borderRadius: 5 }}>{"Here"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.crashButton} onPress={() => this.generateCrash()}>
+          <Text style={{ margin: 10, borderRadius: 5 }}>{"Force Crash"}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  button: { backgroundColor: "cyan", alignSelf: "center", marginTop: 10 },
+  crashButton: { backgroundColor: "#FFAB99", alignSelf: "center", marginTop: 10 }
+});
 
 export default Home;
