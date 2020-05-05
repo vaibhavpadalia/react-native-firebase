@@ -30,9 +30,32 @@ apply plugin: 'com.google.gms.google-services'
 
 ## Push Notifications
 
-```Note: Push notifications in foreground are not supported in version 6```
+```Note: Push notifications in foreground are not supported in version 6. You will get a callback in onMessage function and you can display an alert on it.```
 
 You can use following libraries for push notification:
 * react-native-notifee https://github.com/notifee/react-native-notifee (Paid)
 * react-native-notification https://github.com/wix/react-native-notifications (Free)
 * react-native-push-notification https://github.com/zo0r/react-native-push-notification (Free)
+
+First start with importing the messaging module into the component.
+
+```
+import messaging from '@react-native-firebase/messaging';
+```
+For iOS add the following line to `App.js` as we need to explicitly register with APNs
+
+```
+messaging().registerDeviceForRemoteMessages();
+```
+
+These are some functions present in messaging module:
+1. deleteToken()
+2. getAPNSToken()
+3. getinitialNotification()
+4. getToken()
+5. hasPermission()
+6. requestPermission()
+7. onTokenRefresh()
+
+
+## Crashlytics

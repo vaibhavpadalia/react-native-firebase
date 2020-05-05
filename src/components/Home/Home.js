@@ -11,13 +11,13 @@ class Home extends Component {
   async componentDidMount() {
     const fcmToken = await messaging().getToken();
     if (fcmToken) {
-      console.warn(fcmToken);
+      console.log(fcmToken);
     } else {
       this.onTokenRefreshListener = messaging().onTokenRefresh(fcmToken => { });
     }
     const enabled = await messaging().hasPermission();
     if (enabled) {
-      console.warn("enabled");
+      console.log("enabled");
     } else {
       try {
         await messaging().requestPermission();
@@ -31,6 +31,7 @@ class Home extends Component {
     });
 
     this.messageListener = messaging().onMessage(async message => {
+      alert(message.notification.body)
       console.warn("message received", message);
     });
   }
