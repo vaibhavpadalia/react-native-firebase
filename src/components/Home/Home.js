@@ -31,7 +31,7 @@ class Home extends Component {
     });
 
     this.messageListener = messaging().onMessage(async message => {
-      alert(message.notification.body)
+      alert(message.notification.body);
       console.warn("message received", message);
     });
   }
@@ -49,6 +49,10 @@ class Home extends Component {
     crashlytics().crash();
   };
 
+  recordError = () => {
+    console.log(x.y);
+  };
+
   render() {
     return (
       <View>
@@ -58,6 +62,9 @@ class Home extends Component {
         </TouchableOpacity>
         <TouchableOpacity style={styles.crashButton} onPress={() => this.generateCrash()}>
           <Text style={{ margin: 10, borderRadius: 5 }}>{"Force Crash"}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.crashButton} onPress={() => this.recordError()}>
+          <Text style={{ margin: 10, borderRadius: 5 }}>{"Logical Crash"}</Text>
         </TouchableOpacity>
       </View>
     );
