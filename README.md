@@ -30,14 +30,19 @@ apply plugin: 'com.google.gms.google-services'
 
 ## Push Notifications
 
-```Note: Push notifications in foreground are not supported in version 6. You will get a callback in onMessage function and you can display an alert on it.```
+`Note: Push notifications in foreground are not supported in version 6. You will get a callback in onMessage function and you can display an alert on it.`
 
 You can use following libraries for push notification:
 * react-native-notifee https://github.com/notifee/react-native-notifee (Paid)
 * react-native-notification https://github.com/wix/react-native-notifications (Free)
 * react-native-push-notification https://github.com/zo0r/react-native-push-notification (Free)
 
-First start with importing the messaging module into the component.
+First start with installing "messaging" module.
+```
+npm install --save @react-native-firebase/messaging
+```
+
+Next import the messaging module into the component.
 
 ```
 import messaging from '@react-native-firebase/messaging';
@@ -59,3 +64,24 @@ These are some functions present in messaging module:
 
 
 ## Crashlytics
+
+Install the "crashlytics" firebase module.
+```
+npm install --save @react-native-firebase/crashlytics
+```
+
+For further additional installation check the given links below:
+
+[Android Setup](https://rnfirebase.io/crashlytics/android-setup)
+
+[iOS Setup](https://rnfirebase.io/crashlytics/ios-setup)
+
+`Note: Crashlytics by default does not record crashes in debug mode. To enable it create a firebase.json file in root directory of the project with following configuration:`
+
+```
+{
+  "react-native": {
+    "crashlytics_debug_enabled": true
+  }
+}
+```
