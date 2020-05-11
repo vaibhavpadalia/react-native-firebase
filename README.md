@@ -85,3 +85,10 @@ For further additional installation check the given links below:
   }
 }
 ```
+
+After completion of your installation you can force a crash using the following line:
+```
+crashlytics().crash();
+```
+
+You will see a crash record in your firebase crashlytics console.
