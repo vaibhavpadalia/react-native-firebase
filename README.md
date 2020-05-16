@@ -92,3 +92,11 @@ crashlytics().crash();
 ```
 
 You will see a crash record in your firebase crashlytics console.
+
+## Realtime Database
+
+Install the realtime database module.
+
+```
+npm install --save @react-native-firebase/database
+```
