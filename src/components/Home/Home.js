@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 import messaging from '@react-native-firebase/messaging';
 import crashlytics from '@react-native-firebase/crashlytics';
+import database from '@react-native-firebase/database';
 
 class Home extends Component {
   static navigationOptions = {
