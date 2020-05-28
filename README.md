@@ -105,3 +105,16 @@ You can create a reference object of the database object
 ```
 database().ref('dbLink')
 ```
+
+To setup an active listener call the "on" method with an event handler.
+```
+database()
+  .ref('dbLink')
+  .on('value', snapshot => {
+    console.log('User data: ', snapshot.val());
+  });
+```
+
+You can perform CRUD operations using this module.
+
+For detailed information on this module: [Details](https://rnfirebase.io/database/usage)
