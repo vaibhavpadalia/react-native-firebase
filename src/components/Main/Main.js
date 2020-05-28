@@ -7,6 +7,10 @@ class Main extends Component {
     headerTitle: "Main"
   };
 
+  constructor() {
+    const dbReference = database().ref('/users/123');
+  }
+
   render() {
     return (
       <View>

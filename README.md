@@ -100,3 +100,8 @@ Install the realtime database module.
 ```
 npm install --save @react-native-firebase/database
 ```
+
+You can create a reference object of the database object
+```
+database().ref('dbLink')
+```
