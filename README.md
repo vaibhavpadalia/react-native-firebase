@@ -128,3 +128,4 @@ npm install --save @react-native-firebase/analytics
 ```
 
 Your logs will appear in Firebase console after 1 day.
+To check you logs in debug view under Analytics tab.
